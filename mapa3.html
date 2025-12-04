@@ -274,10 +274,12 @@
             const sup = feat.properties._sup;
             const cor = corPara(normalizar(sup));
             return {
+              // 🔴 sem borda de município, só o “bloco” da supervisão
+              stroke: false,
               color: cor,
-              weight: 1.6,
+              weight: 0,
               fillColor: cor,
-              fillOpacity: 0.35
+              fillOpacity: 0.5
             };
           },
           onEachFeature: (feat, layer) => {
@@ -378,7 +380,7 @@
 
         l.setStyle({
           opacity: visivel ? 1 : 0,
-          fillOpacity: visivel ? 0.35 : 0
+          fillOpacity: visivel ? 0.5 : 0
         });
 
         if (visivel) {
